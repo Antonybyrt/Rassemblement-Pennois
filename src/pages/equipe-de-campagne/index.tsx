@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const team = [
   {
     name: 'Maximilien Fusone',
-    photo: '/maximilien.png',
+    photo: '/maximilien.jpg',
   },
   {
     name: 'Emeline Coch',

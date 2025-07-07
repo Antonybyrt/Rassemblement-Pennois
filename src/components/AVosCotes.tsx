@@ -52,7 +52,7 @@ const AVosCotes: React.FC = () => {
 
   return (
     <motion.section
-      id="actualites"
+      id="avoscotes"
       className="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}

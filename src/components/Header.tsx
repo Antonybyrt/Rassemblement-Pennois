@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
         <nav className="hidden md:flex space-x-8">
           <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
           <a href="/#programme" className="text-gray-700 hover:text-blue-600 transition-colors">Programme</a>
-          <a href="/#actualites" className="text-gray-700 hover:text-blue-600 transition-colors">Actualités</a>
+          <a href="/#avoscotes" className="text-gray-700 hover:text-blue-600 transition-colors">À vos côtés</a>
           <a href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
         </nav>
 
@@ -74,11 +74,11 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
               Programme
             </a>
             <a
-              href="/#actualites"
+              href="/#avposcotes"
               className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Actualités
+              À vos côtés
             </a>
             <a
               href="/#contact"
