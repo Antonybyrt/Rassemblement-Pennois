@@ -26,8 +26,8 @@ const team = [
   {
     name: 'Nadine Legal-Giavelli',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description de Nadine Legal-giavelli"
+    profession: 'Retraité de la fonction publique territoriale',
+    description: "Nadine Legal-Giavelli, Née le 16/10/1957 à Aix en Provence \n \n Retraité de la fonction publique territoriale de 1982 à 2024 en tant Atsem. Animatrice au centre aéré petit enfance de 1989 à 2024. \n \n Mariée une fille âgée de 51 ans, 2 petits fils âgés de 29 et 24 ans. \n \n J’ai pratiqué la course à pieds jusqu’en 2015. \n \n Je suis amoureuse de ma ville Les pennes Mirabeau depuis l’âge de 12 ans ou j’ai quitté les Hautes Alpes"
   },
   {
     name: 'Antony Loussararian',
@@ -42,10 +42,10 @@ const team = [
     description: "71 ans, deux enfants, fonctionnaire de police à la retraite."
   },
   {
-    name: 'Anonyme',
+    name: 'Béatrice Rizzo',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description du membre anonyme."
+    profession: 'Attachée principale du ministère des armées',
+    description: "Béatrice RIZZO, 66 ans, cadre A, attachée principale du ministère des armées, 46 ans d’activité. \n \n Représentante nationale des personnels du service du commissariat des armées. Mariée, 1 enfant en études supérieures. \n \n J’aime la musique, le cinéma, le sport, les voyages et les jeux de cartes."
   },
   {
     name: 'Anonyme',
