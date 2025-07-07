@@ -34,7 +34,7 @@ export const team: TeamMember[] = [
     name: 'Nadine Legal-Giavelli',
     photo: '/default-profile.png',
     profession: 'Retraité de la fonction publique territoriale',
-    description: "Nadine Legal-Giavelli, née le 16/10/1957 à Aix en Provence. \n \n Retraité de la fonction publique territoriale de 1982 à 2024 en tant Atsem. Animatrice au centre aéré petit enfance de 1989 à 2024. \n \n Mariée, et mère une fille âgée de 51 ans, 2 petits fils âgés de 29 et 24 ans. \n \n A pratiqué la course à pieds jusqu’en 2015. \n \n Amoureuse de ma ville Les pennes Mirabeau depuis l’âge de 12 ans."
+    description: "Nadine Legal-Giavelli, née le 16/10/1957 à Aix en Provence. \n \n Retraité de la fonction publique territoriale de 1982 à 2024 en tant Atsem. Animatrice au centre aéré petit enfance de 1989 à 2024. \n \n Mariée, et mère une fille âgée de 51 ans, 2 petits fils âgés de 29 et 24 ans. \n \n A pratiqué la course à pieds jusqu’en 2015. \n \n Amoureuse de ma ville Les Pennes Mirabeau depuis l’âge de 12 ans."
   },
   {
     name: 'Vincent Ferretti',
