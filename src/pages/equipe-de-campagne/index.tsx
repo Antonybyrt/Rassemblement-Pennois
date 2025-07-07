@@ -48,10 +48,10 @@ const team = [
     description: "Béatrice RIZZO, 66 ans, cadre A, attachée principale du ministère des armées, 46 ans d’activité. \n \n Représentante nationale des personnels du service du commissariat des armées. Mariée, 1 enfant en études supérieures. \n \n J’aime la musique, le cinéma, le sport, les voyages et les jeux de cartes."
   },
   {
-    name: 'Anonyme',
+    name: 'Viviane Verdollin',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description du membre anonyme."
+    profession: 'Comptable retraitée',
+    description: "Viviane, 73 ans, retraitée. \n \n A participé au marathon des aigles de Paris à New York, fan de natation. \n \n Medaillée de bronze aux championnats de france d'aviron indoor."
   },
   {
     name: 'Anonyme',
