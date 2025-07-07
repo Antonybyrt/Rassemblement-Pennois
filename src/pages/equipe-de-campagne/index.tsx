@@ -19,7 +19,7 @@ const team = [
   },
   {
     name: 'Jean-Jacques Louedec',
-    photo: '/Jean-Jacques.png',
+    photo: '/Jean-Jacques.jpg',
     profession: 'Cuisinier des collèges à la retraite',
     description: "Jean-Jacques, 64 ans, cusinier des collèges à la retraite."
   },
