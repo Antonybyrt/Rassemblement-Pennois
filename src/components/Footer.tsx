@@ -29,7 +29,7 @@ const Footer: React.FC = () => (
         
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact</h4>
-          <p className="text-gray-300 mb-2">contact@maximilien-fusone.fr</p>
+          <p className="text-gray-300 mb-2">rassemblement.pennois@gmail.com</p>
           <p className="text-gray-300">Les Pennes-Mirabeau, France</p>
         </div>
       </div>

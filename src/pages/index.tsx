@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BackgroundImage from "@/components/BackgroundImage";
 import Programme from "@/components/Programme";
-import Actualites from "@/components/Actualites";
+import AVosCotes from "@/components/AVosCotes";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -24,7 +24,7 @@ export default function Home() {
       <BackgroundImage />
       <Hero />
       <Programme />
-      <Actualites />
+      <AVosCotes />
       <Contact />
       <Footer />
     </div>

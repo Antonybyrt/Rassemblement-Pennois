@@ -34,11 +34,11 @@ const Hero: React.FC = () => (
               Découvrir le programme
             </a>
             <a
-              href="/liste-electorale"
+              href="/equipe-de-campagne"
               className="px-8 py-4 rounded-lg font-semibold text-[#003366] bg-white border-2 border-white hover:bg-transparent hover:text-white transition-colors duration-200 shadow-md text-center"
               style={{backdropFilter: 'blur(2px)'}}
             >
-              Voir la liste électorale
+              Voir l'équipe de campagne
             </a>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Hero: React.FC = () => (
             transition={{ duration: 1, ease: 'easeOut' }}
           >
             <Image
-              src="/maximilien.png"
+              src="/maximilien.jpg"
               alt="Maximilien Fusone"
               width={500}
               height={600}

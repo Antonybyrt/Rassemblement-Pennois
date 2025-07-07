@@ -10,83 +10,83 @@ const team = [
     photo: '/maximilien.png',
   },
   {
-    name: 'Sophie Martin',
+    name: 'Emeline Coch',
     photo: '/default-profile.png',
   },
   {
-    name: 'Julien Bernard',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Claire Dubois',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Lucas Petit',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Emma Lefevre',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Nicolas Girard',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Camille Moreau',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Hugo Laurent',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Chloé Robert',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Antoine Mercier',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Manon Faure',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Thomas Blanchard',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Laura Mathieu',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Alexandre Caron',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Pauline Lefort',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Vincent Perrot',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Elodie Gauthier',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Baptiste Leroy',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Sabrina Colin',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
   {
-    name: 'Olivier Dupuis',
+    name: 'Anonyme',
     photo: '/default-profile.png',
   },
 ];
@@ -105,7 +105,7 @@ const ListeElectorale: React.FC = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
         >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-white mb-10 text-center">Liste électorale</h1>
+        <h1 className="text-4xl font-bold text-white mb-10 text-center">Équipe de campagne</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {visibleTeam.map((member, idx) => (
             <motion.div
