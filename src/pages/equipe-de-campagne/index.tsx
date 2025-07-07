@@ -54,10 +54,10 @@ const team = [
     description: "Viviane, 73 ans, retraitée. \n \n A participé au marathon des aigles de Paris à New York, fan de natation. \n \n Medaillée de bronze aux championnats de france d'aviron indoor."
   },
   {
-    name: 'Anonyme',
+    name: 'Jérôme Vonfeld',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description du membre anonyme."
+    profession: 'Commerçant en restauration',
+    description: "Jérôme, 47 ans, pennois de naissance et deux enfants. \n \n Commerçant en restauration aux Pennes Mirabeau, délégueé du personnel FO à Airbus. \n \n Entraîneur de football et champion de france de UFOLEP en 1998 avec Air Voilerie (football)."
   },
   {
     name: 'Anonyme',
