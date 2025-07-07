@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface HeaderProps {
   isMobileMenuOpen: boolean;
@@ -16,9 +17,16 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
   >
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center py-6">
-        <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            Rassemblement Pennois
+        <div className="">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/rassemblement-pennois.png"
+              alt="Logo Rassemblement Pennois"
+              width={200}
+              height={200}
+              className="mix-blend-multiply"
+              priority
+            />
           </Link>
         </div>
         
