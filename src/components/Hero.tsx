@@ -21,8 +21,8 @@ const Hero: React.FC = () => (
               Candidat aux élections municipales 2026
             </h3>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Pour Les Pennes-Mirabeau, ensemble, construisons l'avenir de notre ville. 
-              Un programme ambitieux au service des Pennois.
+            Conseiller municipal des Pennes-Mirabeau depuis 2014
+            Conseiller régional de Provence-Alpes-Côte-d'Azur depuis 2021
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
