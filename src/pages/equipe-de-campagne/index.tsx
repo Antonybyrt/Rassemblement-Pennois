@@ -12,10 +12,10 @@ const team = [
     description: "Chères Pennoises, chers Pennois, \n \n Conseiller municipal de notre commune depuis 2014 et conseiller régional de Provence-Alpes-Côte-d'Azur depuis 2021, j'ai eu l'honneur de vous représenter à différents niveaux et de porter vos préoccupations dans les instances locales et régionales. Ces deux mandats m'ont permis d'acquérir une solide expérience et une connaissance approfondie des dossiers qui concernent notre territoire. \n \n Pacsé et père de deux enfants, je suis profondément attaché à notre commune et à ce qui fait son identité : ses villages, ses traditions, son cadre de vie. Je sais à quel point il est essentiel de préserver les Pennes-Mirabeau, tout en préparant l'avenir avec responsabilité et ambition. \n \n Aujourd'hui, avec mon équipe, nous souhaitons rassembler les Pennois autour d'un projet clair, fidèle à nos valeurs et résolument tourné vers les enjeux de demain : sécurité, qualité de vie, développement durable, services publics de proximité, soutien à tous les Pennois. \n \n Je suis convaincu que c'est avec vous et pour vous que nous pourrons construire l'avenir des Pennes-Mirabeau. \n \n Avec engagement et détermination."
   },
   {
-    name: 'Emeline Coch',
-    photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description d'Emeline Coch."
+    name: 'Jean-Jacques Louedec',
+    photo: '/Jean-Jacques.png',
+    profession: 'Cuisinier des collèges à la retraite',
+    description: "Jean-Jacques, 64 ans, cusinier des collèges à la retraite."
   },
   {
     name: 'Maeva Trucy',
