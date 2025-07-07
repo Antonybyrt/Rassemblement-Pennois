@@ -51,7 +51,7 @@ const team = [
     name: 'Viviane Verdollin',
     photo: '/default-profile.png',
     profession: 'Comptable retraitée',
-    description: "Viviane, 73 ans, retraitée. \n \n A participé au marathon des aigles de Paris à New York, fan de natation. \n \n Medaillée de bronze aux championnats de france d'aviron indoor."
+    description: "Viviane, 73 ans, retraitée. \n \n A participé au marathon des aigles en 1994, de Paris et de New York en 1997. Participation à une épreuve de 5km de natation en 2018. \n \n Medaillée de bronze aux championnats de france d'aviron indoor en 2019."
   },
   {
     name: 'Jérôme Vonfeld',
