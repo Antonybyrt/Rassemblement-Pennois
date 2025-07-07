@@ -36,10 +36,10 @@ const team = [
     description: "Antony, 23 ans étudiant en 5e année d'ingénieurie informatique orienté blockchain, et actuellement alternant en tant qu'ingénieur blockchain."
   },
   {
-    name: 'Anonyme',
+    name: 'Vincent Ferretti',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description du membre anonyme."
+    profession: 'Fonctionnaire de police à la retraite',
+    description: "71 ans, deux enfants, fonctionnaire de police à la retraite."
   },
   {
     name: 'Anonyme',
