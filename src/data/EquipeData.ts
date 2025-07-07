@@ -28,7 +28,7 @@ export const team: TeamMember[] = [
     name: 'Maeva Trucy',
     photo: '/default-profile.png',
     profession: 'Agent polyvalent',
-    description: "Maëva, 29ans, maman de deux petits garçon, travaille dans un collège en tant qu'agent polyvalent. \n \n Très soucieuse sur le bien être animal et leurs protections. \n \n Pratique de la natation au cercle des nageurs et continu à nager en loisir."
+    description: "Maëva, 29 ans, maman de deux petits garçon, travaille dans un collège en tant qu'agent polyvalent. \n \n Très soucieuse sur le bien être animal et leurs protections. \n \n Pratique de la natation au cercle des nageurs et continu à nager en loisir."
   },
   {
     name: 'Nadine Legal-Giavelli',
