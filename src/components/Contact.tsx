@@ -138,7 +138,7 @@ const Contact: React.FC = () => {
               />
               <div className="flex space-x-4">
                 <a 
-                  href="https://www.facebook.com/profile.php?id=100071361176018" 
+                  href="https://www.facebook.com/maximilien.fusone.9" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"
