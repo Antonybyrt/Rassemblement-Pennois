@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { team } from '@/data/EquipeData';
+import TeamMemberDialog from '@/components/dialog/TeamMemberDialog';
 
 const ListeElectorale: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
@@ -26,7 +27,7 @@ const ListeElectorale: React.FC = () => {
                 <motion.div
                   key={idx}
                   className="bg-white/90 rounded-lg p-6 flex flex-col items-center shadow-lg cursor-pointer"
-                  whileHover={{ scale: 1.07 }}
+                  whileHover={{ scale: 1.04 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   onClick={() => setSelected(idx)}
                 >
@@ -56,45 +57,10 @@ const ListeElectorale: React.FC = () => {
         </motion.div>
         <AnimatePresence>
           {selected !== null && (
-            <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelected(null)}
-            >
-              <motion.div
-                className="bg-white rounded-lg p-8 max-w-md w-full relative shadow-xl"
-                initial={{ scale: 0.8, y: 40 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.8, y: 40 }}
-                onClick={e => e.stopPropagation()}
-              >
-                <button
-                  className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl"
-                  onClick={() => setSelected(null)}
-                  aria-label="Fermer"
-                >
-                  &times;
-                </button>
-                <div className="flex flex-col items-center">
-                  <div className="w-28 h-28 mb-4 relative">
-                    <Image
-                      src={team[selected].photo}
-                      alt={team[selected].name}
-                      fill
-                      className="object-cover rounded-full border-4 border-blue-200"
-                      sizes="112px"
-                    />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 text-center mb-2">{team[selected].name}</h2>
-                  <p className="text-blue-700 text-center font-semibold mb-2">{team[selected].profession}</p>
-                  <div className="text-gray-700 text-center max-h-56 overflow-y-auto px-2 whitespace-pre-line">
-                    {team[selected].description}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+            <TeamMemberDialog
+              member={team[selected]}
+              onClose={() => setSelected(null)}
+            />
           )}
         </AnimatePresence>
       </main>
