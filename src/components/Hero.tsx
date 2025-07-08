@@ -14,16 +14,37 @@ const Hero: React.FC = () => (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-5xl font-bold text-white leading-tight">
+            <motion.h2 
+              className="text-5xl font-bold text-white leading-tight bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
               Maximilien Fusone
-            </h2>
-            <h3 className="text-2xl text-blue-200 font-semibold">
+            </motion.h2>
+            <motion.div 
+              className="w-24 h-1 bg-gradient-to-r from-blue-200 to-blue-400 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: "6rem" }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
+            <motion.h3 
+              className="text-2xl text-blue-200 font-semibold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
               Candidat aux élections municipales 2026
-            </h3>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            </motion.h3>
+            <motion.p 
+              className="text-xl text-blue-100 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
             Conseiller municipal des Pennes-Mirabeau depuis 2014
             Conseiller régional de Provence-Alpes-Côte-d'Azur depuis 2021
-            </p>
+            </motion.p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

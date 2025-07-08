@@ -25,12 +25,10 @@ body {
   line-height: 1.6;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -48,18 +46,33 @@ html {
   background: #a8a8a8;
 }
 
-/* Focus styles */
+.card-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-scrollbar::-webkit-scrollbar-track {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 3px;
+}
+
+.card-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 3px;
+}
+
+.card-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
 *:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
-/* Button hover effects */
 button, a {
   transition: all 0.2s ease-in-out;
 }
 
-/* Image optimization */
 img {
   max-width: 100%;
   height: auto;

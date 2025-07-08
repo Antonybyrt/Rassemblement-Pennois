@@ -31,11 +31,72 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
-          <a href="/#programme" className="text-gray-700 hover:text-blue-600 transition-colors">Programme</a>
-          <a href="/#avoscotes" className="text-gray-700 hover:text-blue-600 transition-colors">À vos côtés</a>
-          <a href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+        <nav className="hidden md:flex space-x-6">
+          <motion.a 
+            href="/" 
+            className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Accueil</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ scale: 0.8 }}
+              whileHover={{ scale: 1 }}
+            />
+          </motion.a>
+          <motion.a 
+            href="/#programme" 
+            className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Programme</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ scale: 0.8 }}
+              whileHover={{ scale: 1 }}
+            />
+          </motion.a>
+          <motion.a 
+            href="/equipe-de-campagne" 
+            className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Équipe</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ scale: 0.8 }}
+              whileHover={{ scale: 1 }}
+            />
+          </motion.a>
+          <motion.a 
+            href="/#avoscotes" 
+            className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">À vos côtés</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ scale: 0.8 }}
+              whileHover={{ scale: 1 }}
+            />
+          </motion.a>
+          <motion.a 
+            href="/#contact" 
+            className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Contact</span>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ scale: 0.8 }}
+              whileHover={{ scale: 1 }}
+            />
+          </motion.a>
         </nav>
 
         {/* Mobile menu button */}
@@ -57,38 +118,61 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
+        <motion.div 
+          className="md:hidden"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
-            <a
+            <motion.a
               href="/"
-              className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+              className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               Accueil
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/#programme"
-              className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+              className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               Programme
-            </a>
-            <a
-              href="/#avposcotes"
-              className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+            </motion.a>
+            <motion.a
+              href="/equipe-de-campagne"
+              className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Équipe de campagne
+            </motion.a>
+            <motion.a
+              href="/#avposcotes"
+              className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               À vos côtés
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/#contact"
-              className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+              className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               Contact
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   </motion.header>

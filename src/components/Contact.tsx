@@ -55,15 +55,46 @@ const Contact: React.FC = () => {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-white mb-4">Nous Contacter</h2>
-          <p className="text-xl text-blue-100">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            Nous Contacter
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-gradient-to-r from-blue-200 to-blue-400 mx-auto rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: "6rem" }}
+            transition={{ duration: 1, delay: 0.3 }}
+          />
+          <motion.p 
+            className="text-xl text-blue-100 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             Une question ? Une suggestion ? N'hésitez pas à nous contacter.
-          </p>
+          </motion.p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Informations de contact</h3>
+              <motion.h3 
+                className="text-2xl font-semibold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+              >
+                Informations de contact
+              </motion.h3>
+              <motion.div 
+                className="w-16 h-0.5 bg-gradient-to-r from-blue-200 to-blue-400 rounded-full mb-6"
+                initial={{ width: 0 }}
+                animate={{ width: "4rem" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -91,7 +122,20 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Suivez-nous</h3>
+              <motion.h3 
+                className="text-2xl font-semibold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+              >
+                Suivez-nous
+              </motion.h3>
+              <motion.div 
+                className="w-16 h-0.5 bg-gradient-to-r from-blue-200 to-blue-400 rounded-full mb-6"
+                initial={{ width: 0 }}
+                animate={{ width: "4rem" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
               <div className="flex space-x-4">
                 <a 
                   href="https://www.facebook.com/profile.php?id=100071361176018" 

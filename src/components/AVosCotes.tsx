@@ -27,10 +27,28 @@ const AVosCotes: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">À vos côtés</h2>
-          <p className="text-xl text-gray-600">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            À vos côtés
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-gradient-to-r from-blue-200 to-blue-400 mx-auto rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: "6rem" }}
+            transition={{ duration: 1, delay: 0.3 }}
+          />
+          <motion.p 
+            className="text-xl text-gray-600 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             Suivez l'actualité de notre campagne et nos dernières actions
-          </p>
+          </motion.p>
         </div>
         
         <div className="relative">
@@ -64,10 +82,11 @@ const AVosCotes: React.FC = () => {
             {visibleNews.map((item, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white rounded-lg shadow-md overflow-hidden"
+                className="bg-gradient-to-br from-[#1976d2] to-[#003366] rounded-lg shadow-md overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.025, y: -4, boxShadow: '0 8px 25px 0 rgba(30, 64, 175, 0.15)' }}
+                transition={{ duration: 0.5, delay: index * 0.1, type: 'spring', stiffness: 300, damping: 20 }}
               >
                 <div className="relative h-48 w-full">
                   <Image
@@ -79,9 +98,11 @@ const AVosCotes: React.FC = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="text-sm text-blue-600 font-semibold mb-2">{item.date}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <div className="text-sm text-blue-200 font-semibold mb-2">{item.date}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                  <div className="max-h-32 overflow-y-auto card-scrollbar">
+                    <p className="text-blue-100 pr-2">{item.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}

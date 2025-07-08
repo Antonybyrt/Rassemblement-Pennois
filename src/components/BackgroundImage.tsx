@@ -20,12 +20,28 @@ const BackgroundImage: React.FC = () => (
     ></motion.div>
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="text-center text-white px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-lg"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           Les Pennes-Mirabeau
-        </h2>
-        <p className="text-xl md:text-2xl drop-shadow-lg">
+        </motion.h2>
+        <motion.div 
+          className="w-24 h-1 bg-gradient-to-r from-white to-blue-200 mx-auto rounded-full mb-4"
+          initial={{ width: 0 }}
+          animate={{ width: "6rem" }}
+          transition={{ duration: 1, delay: 0.3 }}
+        />
+        <motion.p 
+          className="text-xl md:text-2xl drop-shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
           Notre ville, notre avenir
-        </p>
+        </motion.p>
       </div>
     </div>
   </section>
