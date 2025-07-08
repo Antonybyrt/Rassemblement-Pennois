@@ -67,10 +67,10 @@ export const team: TeamMember[] = [
     description: "Magali, 46 ans, chargée des ressources humaines à Marseille."
   },
   {
-    name: 'Anonyme',
+    name: 'Laurent Catani',
     photo: '/default-profile.png',
-    profession: 'Profession',
-    description: "Description du membre anonyme."
+    profession: 'Chauffeur poids lourd',
+    description: "Laurent, 33 ans, chauffeur poids lourd à son compte"
   },
   {
     name: 'Anonyme',
