@@ -31,6 +31,18 @@ export const team: TeamMember[] = [
     description: "Viviane, 73 ans, comptable retraitée."
   },
   {
+    name: 'Jérôme Vonfeld',
+    photo: '/Jerome.png',
+    profession: 'Commerçant en restauration',
+    description: "Jérôme, 47 ans, commerçant en restauration aux Pennes Mirabeau, délégué du personnel FO à Airbus."
+  },
+  {
+    name: 'Anthony Cicconardi',
+    photo: '/Anthony.png',
+    profession: 'Profession',
+    description: "Description"
+  },
+  {
     name: 'Antony Loussararian',
     photo: '/Antony.png',
     profession: 'Ingénieur Blockchain',
@@ -61,16 +73,10 @@ export const team: TeamMember[] = [
     description: "Nadine Legal-Giavelli, 67 ans, Retraité de la fonction publique territoriale de 1982 à 2024 en tant Atsem."
   },
   {
-    name: 'Jérôme Vonfeld',
-    photo: '/Jerome.png',
-    profession: 'Commerçant en restauration',
-    description: "Jérôme, 47 ans, commerçant en restauration aux Pennes Mirabeau, délégué du personnel FO à Airbus."
-  },
-  {
-    name: 'Anthony Cicconardi',
-    photo: '/Anthony.png',
-    profession: 'Profession',
-    description: "Description"
+    name: 'Laurent Catani',
+    photo: '/Laurent.png',
+    profession: 'Chauffeur poids lourd',
+    description: "Laurent, 33 ans, chauffeur poids lourd à son compte"
   },
   {
     name: 'Emma Gabriele',
@@ -107,11 +113,5 @@ export const team: TeamMember[] = [
     photo: '/default-profile.png',
     profession: 'Attachée principale du ministère des armées',
     description: "Béatrice RIZZO, 66 ans, cadre A, attachée principale du ministère des armées, 46 ans d’activité."
-  },
-  {
-    name: 'Laurent Catani',
-    photo: '/default-profile.png',
-    profession: 'Chauffeur poids lourd',
-    description: "Laurent, 33 ans, chauffeur poids lourd à son compte"
   },
 ];
