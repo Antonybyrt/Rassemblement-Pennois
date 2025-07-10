@@ -49,7 +49,7 @@ const ListeElectorale: React.FC = () => {
               {visibleTeam.map((member, idx) => (
                 <motion.div
                   key={idx}
-                  className="bg-white/90 rounded-lg p-6 flex flex-col items-center shadow-lg cursor-pointer"
+                  className="bg-white/90 rounded-lg p-6 flex flex-col items-center shadow-lg cursor-pointer h-full"
                   whileHover={{ scale: 1.04 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   onClick={() => setSelected(idx)}
@@ -63,8 +63,16 @@ const ListeElectorale: React.FC = () => {
                       sizes="128px"
                     />
                   </div>
-                  <h2 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h2>
-                  <p className="text-gray-600 text-center text-sm mt-1">{member.profession}</p>
+                  <div className="flex-1 flex flex-col items-center w-full">
+                    <h2 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h2>
+                    <p className="text-gray-600 text-center text-sm mt-1">{member.profession}</p>
+                  </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setSelected(idx); }}
+                    className="mt-auto w-full px-4 py-2 bg-gradient-to-r from-[#1976d2] to-[#003366] text-white rounded-lg font-medium shadow hover:from-blue-400 hover:to-blue-700 transition-all"
+                  >
+                    Voir plus d'infos
+                  </button>
                 </motion.div>
               ))}
             </div>

@@ -22,7 +22,13 @@ export const team: TeamMember[] = [
     name: 'Jean-Luc Giraud',
     photo: '/Jean-Luc.png',
     profession: 'Commerçant',
-    description: "Jean-Luc, 47 ans, commerçant aux Cadenaux."
+    description: "Jean-Luc, 47 ans, commerçant aux Cadeneaux."
+  },
+  {
+    name: 'Magali Kerbart',
+    photo: '/Magali.png',
+    profession: 'Chargée des ressources humaines',
+    description: "Magali, 46 ans, chargée des ressources humaines à Marseille."
   },
   {
     name: 'Viviane Verdollin',
@@ -49,12 +55,6 @@ export const team: TeamMember[] = [
     description: "Antony, 23 ans, étudiant en 5e année d'ingénieurie informatique orienté blockchain, et actuellement alternant en tant qu'ingénieur blockchain."
   },
   {
-    name: 'Magali Kerbart',
-    photo: '/Magali.png',
-    profession: 'Chargée des ressources humaines',
-    description: "Magali, 46 ans, chargée des ressources humaines à Marseille."
-  },
-  {
     name: 'Maeva Trucy',
     photo: '/Maeva.png',
     profession: 'Agent polyvalent',
@@ -64,7 +64,7 @@ export const team: TeamMember[] = [
     name: 'Jean-Jacques Louedec',
     photo: '/Jean-Jacque.png',
     profession: 'Cuisinier des collèges à la retraite',
-    description: "Jean-Jacques, 64 ans, cusinier des collèges à la retraite."
+    description: "Jean-Jacques, 64 ans, ancien cusinier du collège Jacques Monot."
   },
   {
     name: 'Nadine Legal-Giavelli',
@@ -82,7 +82,7 @@ export const team: TeamMember[] = [
     name: 'Emma Gabriele',
     photo: '/Emma.png',
     profession: 'Étudiante en communication',
-    description: "Emma, étudiante en communication."
+    description: "Emma, 20 ans, étudiante en communication."
   },
   {
     name: 'Patrice Lannez',
