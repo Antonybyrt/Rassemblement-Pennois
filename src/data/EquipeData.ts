@@ -40,7 +40,7 @@ export const team: TeamMember[] = [
     name: 'Jérôme Vonfeld',
     photo: '/Jerome.png',
     profession: 'Commerçant en restauration',
-    description: "Jérôme, 47 ans, commerçant en restauration aux Pennes Mirabeau, délégué du personnel FO à Airbus."
+    description: "Jérôme, 47 ans, commerçant en restauration aux Pennes Mirabeau."
   },
   {
     name: 'Anthony Cicconardi',
