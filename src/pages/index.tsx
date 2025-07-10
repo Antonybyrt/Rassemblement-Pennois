@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import BackgroundImage from "@/components/BackgroundImage";
 import Programme from "@/components/Programme";
 import AVosCotes from "@/components/AVosCotes";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const geist = Geist({
@@ -25,7 +24,6 @@ export default function Home() {
       <Hero />
       <Programme />
       <AVosCotes />
-      <Contact />
       <Footer />
     </div>
   );
