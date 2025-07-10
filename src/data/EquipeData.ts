@@ -99,8 +99,8 @@ export const team: TeamMember[] = [
   {
     name: 'Lyonel Joubeaux',
     photo: '/Lyonel.png',
-    profession: 'Commerçant retraité',
-    description: "Lyonel, 86 ans, commerçant retraité et conseiller municipal de 1995 à 2020."
+    profession: 'Commercial retraité',
+    description: "Lyonel, 86 ans, commercial retraité et conseiller municipal de 1995 à 2020."
   },
   {
     name: 'Béatrice Rizzo',
