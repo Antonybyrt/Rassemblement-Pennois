@@ -7,6 +7,12 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date:"26 Juillet 2025",
+    title: "𝐄𝐬𝐭𝐢𝐯𝐚𝐥𝐞𝐬 ! ☀️",
+    description: "Hier, c'était la dernière des Estivales… pour le mois de juillet ! 😉 Une fois encore, l’ambiance était au rendez-vous : conviviale, chaleureuse et familiale ! Un immense merci à tous les bénévoles pour leur énergie et leur engagement. 👍 Merci également aux agents municipaux et aux policiers municipaux pour leur présence et leur travail. ",
+    image: "/Samedi-26-Juillet-2025.jpg"
+  },
+  {
     date: "5 Juillet 2025",
     title: "Gala de twirling Bâton & Estivales",
     description: "Bravo à toutes les championnes médaillées pour leurs superbes démonstrations lors du gala de twirling bâton",
