@@ -10,7 +10,7 @@
   
   <!-- Page équipe de campagne -->
   <url>
-    <loc>https://www.rassemblement-pennois.com/equipe-de-campagne</loc>
+    <loc>https://www.rassemblementpennois.com/equipe-de-campagne</loc>
     <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,21 +18,21 @@
   
   <!-- Sections de la page d'accueil -->
   <url>
-    <loc>https://www.rassemblement-pennois.com/#programme</loc>
+    <loc>https://www.rassemblementpennois.com/#programme</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://www.rassemblement-pennois.com/#avoscotes</loc>
+    <loc>https://www.rassemblementpennois.com/#avoscotes</loc>
     <lastmod>2025-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.rassemblement-pennois.com/#contact</loc>
+    <loc>https://www.rassemblementpennois.com/#contact</loc>
     <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
