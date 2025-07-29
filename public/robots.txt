@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rassemblement-pennois.fr/sitemap.xml
+
+# Optimisation pour les moteurs de recherche
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Permettre l'indexation des pages principales
+Allow: /
+Allow: /equipe-de-campagne
+Allow: /#programme
+Allow: /#avoscotes
+Allow: /#contact 
