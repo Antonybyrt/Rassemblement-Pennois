@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="fr">
       <Head>
         <meta name="google-site-verification" content="XQeK8JTzk7JOAghaCVZu4ukGoJ0ICJYExJ1o_dzGB6w" />
+        <link rel="canonical" href="https://www.rassemblementpennois.com/" />
       </Head>
       <body className="antialiased">
         <Main />
