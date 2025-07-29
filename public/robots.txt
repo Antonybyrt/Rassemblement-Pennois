@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rassemblement-pennois.fr/sitemap.xml
+Sitemap: https://www.rassemblementpennois.com/sitemap.xml
 
 # Optimisation pour les moteurs de recherche
 Disallow: /api/
