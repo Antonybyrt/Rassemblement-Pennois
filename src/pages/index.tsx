@@ -9,8 +9,6 @@ import Programme from "@/components/Programme";
 import AVosCotes from "@/components/AVosCotes";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import CanonicalRedirect from "@/components/CanonicalRedirect";
-import { SEO_CONFIG } from "@/config/seo";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -21,21 +19,18 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <>
-      <CanonicalRedirect expectedPath="/" />
-      <SEOHead
-        title={SEO_CONFIG.pages.home.title}
-        description={SEO_CONFIG.pages.home.description}
-        canonicalUrl={SEO_CONFIG.pages.home.canonicalUrl}
+    <div className={`${geist.variable} font-sans`}>
+      <SEOHead 
+        title="Rassemblement Pennois - Les Pennes-Mirabeau"
+        description="Maximilien Fusone, candidat aux élections municipales 2026. Conseiller municipal des Pennes-Mirabeau depuis 2014. Conseiller régional de Provence-Alpes-Côte-d'Azur depuis 2021."
+        canonicalUrl="https://www.rassemblementpennois.com/"
       />
-      <div className={`${geist.variable} font-sans`}>
-        <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-        <BackgroundImage />
-        <Hero />
-        <Programme />
-        <AVosCotes />
-        <Footer />
-      </div>
-    </>
+      <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+      <BackgroundImage />
+      <Hero />
+      <Programme />
+      <AVosCotes />
+      <Footer />
+    </div>
   );
 }
