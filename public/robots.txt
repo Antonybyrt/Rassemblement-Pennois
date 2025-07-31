@@ -4,14 +4,19 @@ Allow: /
 # Sitemap
 Sitemap: https://www.rassemblementpennois.com/sitemap.xml
 
-# Optimisation pour les moteurs de recherche
+# Empêcher l'indexation des ressources techniques
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /static/
+
+# Empêcher l'indexation des versions non-www
+Disallow: http://rassemblementpennois.com/
+Disallow: https://rassemblementpennois.com/
 
 # Permettre l'indexation des pages principales
 Allow: /
 Allow: /equipe-de-campagne
-Allow: /#programme
-Allow: /#avoscotes
-Allow: /#contact 
+
+# Paramètres de crawl
+Crawl-delay: 1 
