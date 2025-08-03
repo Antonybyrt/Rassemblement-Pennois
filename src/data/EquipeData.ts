@@ -114,4 +114,10 @@ export const team: TeamMember[] = [
     profession: 'Fonctionnaire de police à la retraite',
     description: "Vincent, 71 ans, deux enfants, fonctionnaire de police à la retraite."
   },
+  {
+    name: 'Anais Pirlian',
+    photo: '/Anais.jpg',
+    profession: 'Étuidante infirmière',
+    description: "Anais, 24 ans, étudiante infirmière."
+  },
 ];
