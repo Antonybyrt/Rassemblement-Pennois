@@ -26,7 +26,7 @@ const BackgroundImage: React.FC = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          Les Pennes-Mirabeau
+          Préserver Les Pennes-Mirabeau
         </motion.h2>
         <motion.div 
           className="w-24 h-1 bg-gradient-to-r from-white to-blue-200 mx-auto rounded-full mb-4"
@@ -40,7 +40,7 @@ const BackgroundImage: React.FC = () => (
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          Préserver les Pennes Mirabeau
+          Notre ville, notre avenir
         </motion.p>
       </div>
     </div>
