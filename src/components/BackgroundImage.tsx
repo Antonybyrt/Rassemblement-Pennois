@@ -40,7 +40,7 @@ const BackgroundImage: React.FC = () => (
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          Notre ville, notre avenir
+          Préserver les Pennes Mirabeau
         </motion.p>
       </div>
     </div>
