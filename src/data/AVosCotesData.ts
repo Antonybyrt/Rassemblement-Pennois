@@ -7,6 +7,12 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date:"2 Août 2025",
+    title: "🎶 𝐂𝐎𝐍𝐂𝐄𝐑𝐓 !",
+    description: "Encore une très belle soirée passée tous ensemble sous le signe de la musique, du partage et de la bonne humeur ! Un immense bravo à l’orchestre Almeras pour ce super concert !👏👏 Une ambiance à la fois familiale et festive, comme on les aime ! 🙏 Un grand merci à nos  commerçants pour leur participation :  🍻 Yvan – Bar Le Provençal 🍕 Yvan et Fabrice - La cloche d'or 🥖 Eric – Le Meunier des Pennes 🍹 Jean-Luc – Bar O'Cadenaux 🍕  Jeannine et Jean-Marc - Pizza Cécilia  👏 Sans oublier nos services culture, technique et nos policiers municipaux pour leur présence et leur engagement.",
+    image: "/Samedi-2-Aout-2025.jpg"
+  },
+  {
     date:"26 Juillet 2025",
     title: "𝐄𝐬𝐭𝐢𝐯𝐚𝐥𝐞𝐬 ! ☀️",
     description: "Hier, c'était la dernière des Estivales… pour le mois de juillet ! 😉 Une fois encore, l’ambiance était au rendez-vous : conviviale, chaleureuse et familiale ! Un immense merci à tous les bénévoles pour leur énergie et leur engagement. 👍 Merci également aux agents municipaux et aux policiers municipaux pour leur présence et leur travail. ",
