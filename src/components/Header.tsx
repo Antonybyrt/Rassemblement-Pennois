@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
             <div className="">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/rassemblement-pennois.png"
+                  src="Logo_Complet_FINAL.svg"
                   alt="Logo Rassemblement Pennois"
                   width={200}
                   height={200}
