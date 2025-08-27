@@ -43,6 +43,12 @@ export const team: TeamMember[] = [
     description: "Jérôme, 47 ans, commerçant en restauration aux Pennes Mirabeau."
   },
   {
+    name: 'Vincent Ferretti',
+    photo: '/Vincent.png',
+    profession: 'Fonctionnaire de police à la retraite',
+    description: "Vincent, 71 ans, deux enfants, fonctionnaire de police à la retraite."
+  },
+  {
     name: 'Anthony Cicconardi',
     photo: '/Anthony.png',
     profession: 'Employé',
@@ -109,15 +115,15 @@ export const team: TeamMember[] = [
     description: "Béatrice, 66 ans, cadre A, attachée principale du ministère des armées, 46 ans d’activité."
   },
   {
-    name: 'Vincent Ferretti',
-    photo: '/Vincent.png',
-    profession: 'Fonctionnaire de police à la retraite',
-    description: "Vincent, 71 ans, deux enfants, fonctionnaire de police à la retraite."
-  },
-  {
     name: 'Anaïs Pirlian',
     photo: '/Anais.jpg',
     profession: 'Étudiante infirmière',
     description: "Anaïs, 24 ans, étudiante infirmière."
+  },
+  {
+    name: 'Georgette Groult',
+    photo: '/Georgette.jpg',
+    profession: 'Retraité',
+    description: "Georgette, 75 ans, retraité."
   },
 ];

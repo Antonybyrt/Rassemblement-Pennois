@@ -7,6 +7,36 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date:"23 Août 2025",
+    title: "𝐄𝐬𝐭𝐢𝐯𝐚𝐥𝐞𝐬 !!!",
+    description: "Ce samedi marquait la dernière de l’été. Merci à toutes celles et tous ceux qui ont contribué au bon déroulement. Vivement l’année prochaine ! 🎉",
+    image: "/Samedi-23-Aout-2025.jpg"
+  },
+  {
+    date:"22 Août 2025",
+    title: "𝐄𝐬𝐭𝐢𝐯𝐚𝐥𝐞𝐬 !",
+    description: "✨ Hier soir, nous étions  aux Estivales : de la musique, une ambiance chaleureuse et familiale comme on les aime 🎶😊 Un grand merci aux bénévoles pour leur énergie et leur dévouement, ainsi qu’à la police municipale pour leur présence et leur vigilance et aux services .👍 Ces beaux moments sont possibles grâce à vous tous 💛",
+    image: "/Vendredi-22-Aout-2025.jpg"
+  },
+  {
+    date:"15 Août 2025",
+    title: "𝐀𝐬𝐬𝐨𝐦𝐩𝐭𝐢𝐨𝐧 ✝️",
+    description: "Comme chaque année, nous avons eu l’honneur de participer à la procession du 15 août. Un moment qui nous relie à nos racines et à nos traditions.",
+    image: "/Vendredi-15-Aout-2025.jpg"
+  },
+  {
+    date:"14 Août 2025",
+    title: "🥘💃 𝐒𝐨𝐢𝐫𝐞́𝐞 𝐏𝐚𝐞̈𝐥𝐥𝐚 & 𝐃𝐚𝐧𝐬𝐚𝐧𝐭𝐞 🎶✨",
+    description: "Magnifique soirée d'été pleine de rires, de musique et de bonne humeur ! Un immense merci aux bénévoles 👍 — sans vous, rien de tout cela ne serait possible. Merci également à toutes les personnes présentes pour leur énergie et leur sourire !",
+    image: "/Jeudi-14-Aout-2025.jpg"
+  },
+  {
+    date:"8 Août 2025",
+    title: "Cinéma en plein air !",
+    description: "Hier soir, la magie du cinéma en plein air a opéré ! Nous avons (re)découvert E.T. sous les étoiles, dans une ambiance conviviale et familiale 🌙🎬 ! Un grand merci aux services  qui ont rendu ce beau moment possible ! 👏",
+    image: "/Vendredi-8-Aout-2025.jpg"
+  },
+  {
     date:"2 Août 2025",
     title: "🎶 𝐂𝐎𝐍𝐂𝐄𝐑𝐓 !",
     description: "Encore une très belle soirée passée tous ensemble sous le signe de la musique, du partage et de la bonne humeur ! Un immense bravo à l’orchestre Almeras pour ce super concert !👏👏 Une ambiance à la fois familiale et festive, comme on les aime ! 🙏 Un grand merci à nos  commerçants pour leur participation :  🍻 Yvan – Bar Le Provençal 🍕 Yvan et Fabrice - La cloche d'or 🥖 Eric – Le Meunier des Pennes 🍹 Jean-Luc – Bar O'Cadenaux 🍕  Jeannine et Jean-Marc - Pizza Cécilia  👏 Sans oublier nos services culture, technique et nos policiers municipaux pour leur présence et leur engagement.",
