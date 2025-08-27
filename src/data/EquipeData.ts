@@ -132,6 +132,6 @@ export const team: TeamMember[] = [
     name: 'Marine Martin',
     photo: '/Marine.JPG',
     profession: 'Responsable d\'exploitation dans le transport',
-    description: "Marine, 33 ans, responsable d\'exploitation dans le transport"
+    description: "Marine, 33 ans, responsable d\'exploitation dans le transport."
   },
 ];
