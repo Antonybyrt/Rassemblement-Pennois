@@ -1,3 +1,5 @@
+import { tr } from "framer-motion/client";
+
 export interface TeamMember {
   name: string;
   photo: string;
@@ -125,5 +127,11 @@ export const team: TeamMember[] = [
     photo: '/Georgette.jpg',
     profession: 'Retraité',
     description: "Georgette, 75 ans, retraité."
+  },
+  {
+    name: 'Marine Martin',
+    photo: '/Marine.JPG',
+    profession: 'Responsable d\'exploitation dans le transport',
+    description: "Marine, 33 ans, responsable d\'exploitation dans le transport"
   },
 ];
