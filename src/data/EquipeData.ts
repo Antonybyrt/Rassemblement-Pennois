@@ -60,7 +60,13 @@ export const team: TeamMember[] = [
     name: 'Antony Loussararian',
     photo: '/Antony.png',
     profession: 'Ingénieur Blockchain',
-    description: "Antony, 23 ans, étudiant en 5e année d'ingénieurie informatique orienté blockchain, et actuellement alternant en tant qu'ingénieur blockchain."
+    description: "Antony, 23 ans, étudiant en 5e année d'ingénieurie informatique orienté blockchain, et actuellement ingénieur blockchain en alternance et freelance."
+  },
+  {
+    name: 'Sophie Boissiere',
+    photo: '/Sophie.png',
+    profession: 'Cheffe de publicité grand compte',
+    description: "Sophie, 41 ans, cheffe de publicité grand compte."
   },
   {
     name: 'Maeva Trucy',

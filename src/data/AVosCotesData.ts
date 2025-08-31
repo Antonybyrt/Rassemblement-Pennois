@@ -7,6 +7,12 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date:"30 Août 2025",
+    title: "𝐂𝐚𝐟𝐞́ 𝐦𝐚𝐭𝐢𝐧𝐚𝐥 ! ☕️",
+    description: "Petit café avant d'aller faire un tour au marché !",
+    image: "/Samedi-30-Aout-2025.jpg"
+  },
+  {
     date:"23 Août 2025",
     title: "𝐄𝐬𝐭𝐢𝐯𝐚𝐥𝐞𝐬 !!!",
     description: "Ce samedi marquait la dernière de l’été. Merci à toutes celles et tous ceux qui ont contribué au bon déroulement. Vivement l’année prochaine ! 🎉",
