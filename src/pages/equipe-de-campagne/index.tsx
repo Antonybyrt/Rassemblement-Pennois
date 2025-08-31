@@ -10,7 +10,49 @@ import TeamMemberDialog from '@/components/dialog/TeamMemberDialog';
 const ListeElectorale: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [selected, setSelected] = useState<null | number>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   const visibleTeam = showAll ? team : team.slice(0, 8);
+
+  const toggleShowAll = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setShowAll((v) => !v);
+    setTimeout(() => setIsAnimating(false), 800);
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 10, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as const
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      scale: 0.98,
+      transition: {
+        duration: 0.4,
+        ease: "easeIn" as const
+      }
+    }
+  };
+
+  const buttonVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.02,
+      transition: { duration: 0.3, ease: "easeOut" as const }
+    },
+    tap: { 
+      scale: 0.98,
+      transition: { duration: 0.1 }
+    }
+  };
 
   return (
     <div className="font-sans bg-gradient-to-br from-[#1976d2] to-[#003366] min-h-screen flex flex-col">
@@ -51,45 +93,80 @@ const ListeElectorale: React.FC = () => {
                 Découvrez les membres dévoués qui composent notre équipe de campagne
               </motion.p>
             </div>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {visibleTeam.map((member, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-white/90 rounded-lg p-6 flex flex-col items-center shadow-lg cursor-pointer h-full"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  onClick={() => setSelected(idx)}
-                >
-                  <div className="w-32 h-32 mb-4 relative">
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      fill
-                      className="object-cover rounded-full border-4 border-blue-200"
-                      sizes="128px"
-                    />
-                  </div>
-                  <div className="flex-1 flex flex-col items-center w-full">
-                    <h2 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h2>
-                    <p className="text-gray-600 text-center text-sm mt-1">{member.profession}</p>
-                  </div>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); setSelected(idx); }}
-                    className="mt-auto w-full px-4 py-2 bg-gradient-to-r from-[#1976d2] to-[#003366] text-white rounded-lg font-medium shadow hover:from-blue-400 hover:to-blue-700 transition-all"
+              <AnimatePresence mode="wait">
+                {visibleTeam.map((member, idx) => (
+                  <motion.div
+                    key={`${showAll ? 'all' : 'partial'}-${idx}`}
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{ delay: idx * 0.08 }}
+                    className="bg-white/90 rounded-lg p-6 flex flex-col items-center shadow-lg cursor-pointer h-full"
+                    whileHover={{ 
+                      scale: 1.02, 
+                      y: -2,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
+                    whileTap={{ scale: 0.99 }}
+                    onClick={() => setSelected(idx)}
                   >
-                    Voir plus d'infos
-                  </button>
-                </motion.div>
-              ))}
+                    <div className="w-32 h-32 mb-4 relative">
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        className="object-cover rounded-full border-4 border-blue-200"
+                        sizes="128px"
+                      />
+                    </div>
+                    <div className="flex-1 flex flex-col items-center w-full">
+                      <h2 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h2>
+                      <p className="text-gray-600 text-center text-sm mt-1">{member.profession}</p>
+                    </div>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setSelected(idx); }}
+                      className="mt-auto w-full px-4 py-2 bg-gradient-to-r from-[#1976d2] to-[#003366] text-white rounded-lg font-medium shadow hover:from-blue-400 hover:to-blue-700 transition-all duration-300"
+                    >
+                      Voir plus d'infos
+                    </button>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
-            <div className="flex justify-center mt-10">
-              <button
-                onClick={() => setShowAll((v) => !v)}
-                className="bg-white/90 text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-white hover:scale-105 transition-all border border-blue-200"
+            
+            <motion.div 
+              className="flex justify-center mt-10"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <motion.button
+                onClick={toggleShowAll}
+                disabled={isAnimating}
+                className="bg-white/90 text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-white hover:shadow-lg transition-all duration-300 border border-blue-200"
+                variants={buttonVariants}
+                initial="initial"
+                whileHover="hover"
+                whileTap="tap"
               >
-                {showAll ? 'Voir moins' : 'Voir plus'}
-              </button>
-            </div>
+                <span className="flex items-center space-x-2">
+                  <span>{showAll ? 'Voir moins' : 'Voir plus'}</span>
+                  <motion.svg 
+                    className="w-4 h-4" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    animate={{ rotate: showAll ? 180 : 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </motion.svg>
+                </span>
+              </motion.button>
+            </motion.div>
           </div>
         </motion.div>
         <AnimatePresence>
