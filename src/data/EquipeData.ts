@@ -131,8 +131,8 @@ export const team: TeamMember[] = [
   {
     name: 'Georgette Groult',
     photo: '/Georgette.jpg',
-    profession: 'Retraité',
-    description: "Georgette, 75 ans, retraité."
+    profession: 'Retraitée',
+    description: "Georgette, 75 ans, retraitée."
   },
   {
     name: 'Marine Martin',
