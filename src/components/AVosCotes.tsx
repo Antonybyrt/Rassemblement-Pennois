@@ -7,9 +7,11 @@ const AVosCotes: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const totalPages = Math.ceil(news.length / 3);
   const visibleNews = news.slice(currentIndex * 3, (currentIndex * 3) + 3);
+
 
   const nextPage = () => {
     if (isAnimating) return;
@@ -30,6 +32,20 @@ const AVosCotes: React.FC = () => {
     setIsAnimating(true);
     setDirection(pageIndex > currentIndex ? 1 : -1);
     setCurrentIndex(pageIndex);
+  };
+
+  const openVideo = (videoUrl: string) => {
+    setSelectedVideo(videoUrl);
+  };
+
+  const closeVideo = () => {
+    setSelectedVideo(null);
+  };
+
+  const getYouTubeVideoId = (url: string): string => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11 ? match[2] : '';
   };
 
   useEffect(() => {
@@ -167,7 +183,7 @@ const AVosCotes: React.FC = () => {
 
           {/* Conteneur des cartes */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-16 overflow-hidden">
-            <AnimatePresence mode="wait" custom={direction}>
+            <AnimatePresence custom={direction}>
               {visibleNews.map((item, index) => (
                 <motion.div 
                   key={`${currentIndex}-${index}`}
@@ -190,18 +206,67 @@ const AVosCotes: React.FC = () => {
                   }}
                 >
                   <div className="relative h-48 w-full overflow-hidden">
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </motion.div>
+                    {item.type === 'video' ? (
+                      <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center group">
+                        {/* Miniature YouTube */}
+                        <div className="absolute inset-0">
+                          <img
+                            src={`https://img.youtube.com/vi/${getYouTubeVideoId(item.video!)}/maxresdefault.jpg`}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback vers une image de qualité inférieure si maxresdefault n'existe pas
+                              const target = e.target as HTMLImageElement;
+                              target.src = `https://img.youtube.com/vi/${getYouTubeVideoId(item.video!)}/hqdefault.jpg`;
+                            }}
+                          />
+                          {/* Overlay sombre */}
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
+                        </div>
+                        
+                        <button
+                          className="absolute inset-0 w-full h-full cursor-pointer z-30"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            openVideo(item.video!);
+                          }}
+                          style={{ background: 'transparent', border: 'none' }}
+                        >
+                          {/* Icône de lecture YouTube */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-red-600 rounded-full p-4 shadow-lg group-hover:bg-red-700 group-hover:scale-110 transition-all duration-300">
+                            <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </div>
+                          
+                          {/* Badge VIDÉO */}
+                          <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold z-10">
+                            VIDÉO
+                          </div>
+                          
+                          {/* Texte d'instruction */}
+                          <div className="absolute bottom-2 left-2 right-2 text-center z-10">
+                            <span className="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
+                              Cliquez pour lire
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                    ) : (
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <Image
+                          src={item.image!}
+                          alt={item.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </motion.div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="p-6">
@@ -291,6 +356,65 @@ const AVosCotes: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Modal pour la vidéo */}
+      <AnimatePresence>
+        {selectedVideo && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeVideo}
+          >
+            <motion.div
+              className="relative w-full max-w-4xl mx-4 bg-white rounded-2xl overflow-hidden shadow-2xl"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header de la modal */}
+              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-600 to-blue-700">
+                <h3 className="text-white font-semibold text-lg">🎬 Vidéo de campagne</h3>
+                <motion.button
+                  onClick={closeVideo}
+                  className="text-white hover:text-gray-200 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </motion.button>
+              </div>
+              
+              {/* Contenu de la vidéo */}
+              <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(selectedVideo)}?autoplay=1&rel=0&modestbranding=1`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="rounded-b-2xl"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+              
+              {/* Footer avec instructions */}
+              <div className="p-4 bg-gray-50 text-center">
+                <p className="text-gray-600 text-sm">
+                  💡 Cliquez en dehors de la vidéo ou sur la croix pour fermer
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 };
