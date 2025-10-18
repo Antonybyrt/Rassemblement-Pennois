@@ -125,7 +125,7 @@ const Footer: React.FC = () => (
               />
             </a>
             <a 
-              href="https://www.youtube.com/@rassemblementnationallespe7689" 
+              href="https://www.youtube.com/@RassemblementPennois" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"

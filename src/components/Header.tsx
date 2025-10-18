@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ContactDialog from './dialog/ContactDialog';
 
 interface HeaderProps {
   isMobileMenuOpen: boolean;
@@ -10,12 +9,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-  const openContactModal = () => {
-    setIsContactModalOpen(true);
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <>
@@ -94,19 +87,19 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
                   whileHover={{ scale: 1 }}
                 />
               </motion.a>
-              <motion.button 
-                onClick={openContactModal}
+              <motion.a 
+                href="/contact" 
                 className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-lg hover:bg-blue-50 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Contact</span>
+                <span className="relative z-10">💡 Boîte à Idées</span>
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={{ scale: 0.8 }}
                   whileHover={{ scale: 1 }}
                 />
-              </motion.button>
+              </motion.a>
             </nav>
 
             {/* Mobile menu button */}
@@ -172,24 +165,20 @@ const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }
                 >
                   À vos côtés
                 </motion.a>
-                <motion.button
-                  onClick={openContactModal}
-                  className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
+                <motion.a
+                  href="/contact"
+                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-lg font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Contact
-                </motion.button>
+                  💡 Boîte à Idées
+                </motion.a>
               </div>
             </motion.div>
           )}
         </div>
       </motion.header>
-
-      <ContactDialog
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
-      />
     </>
   );
 };
