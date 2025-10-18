@@ -43,9 +43,27 @@ const AVosCotes: React.FC = () => {
   };
 
   const getYouTubeVideoId = (url: string): string => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return match && match[2].length === 11 ? match[2] : '';
+    const patterns = [
+      // YouTube Shorts
+      /(?:youtube\.com\/shorts\/)([^#&?]*)/,
+      // YouTube watch
+      /(?:youtube\.com\/watch\?v=)([^#&?]*)/,
+      // youtu.be
+      /(?:youtu\.be\/)([^#&?]*)/,
+      // YouTube embed
+      /(?:youtube\.com\/embed\/)([^#&?]*)/,
+      // Autres formats
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
+    ];
+    
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match && match[1] && match[1].length === 11) {
+        return match[1];
+      }
+    }
+    
+    return '';
   };
 
   useEffect(() => {

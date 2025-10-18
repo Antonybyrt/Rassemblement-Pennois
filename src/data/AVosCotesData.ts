@@ -9,7 +9,14 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
-    date: "13 Septembre 2025",
+    date: "20 Septembre 2025",
+    title: "𝐔𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐞𝐧𝐬𝐨𝐥𝐞𝐢𝐥𝐥𝐞́ 𝐩𝐚𝐬𝐬𝐞́ 𝐚̀ 𝐯𝐨𝐬 𝐜𝐨̂𝐭𝐞́𝐬 ! ☀️",
+    description: "Entre sécurité routière, vide-greniers, marché, Octobre Rose, spectacles et rencontres sportives… Que de beaux moments partagés ! Déjà hâte d’être au prochain week-end 🤩",
+    video: "https://youtube.com/shorts/IBW2SZwXD1E?si=HSsgiL-qSQXklSYf",
+    type: 'video'
+  },
+  {
+    date: "20 Septembre 2025",
     title: "𝐄𝐧𝐜𝐨𝐫𝐞 𝐮𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐚̀ 𝐯𝐨𝐬 𝐜𝐨̂𝐭𝐞́𝐬 !",
     description: "Les Provençades, tournois de pétanque etc… Quel bonheur de partager ces moments avec vous ! 👍 On a déjà hâte d'être le week-end prochain !",
     video: "https://youtu.be/lNO-UTJUNcU?si=ivy1mXpo-c_B3Jj5",
