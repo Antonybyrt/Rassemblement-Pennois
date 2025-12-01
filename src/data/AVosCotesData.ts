@@ -9,7 +9,62 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
-    date: "20 Septembre 2025",
+    date: "26 Novembre 2025",
+    title: "🎄Marché de Noël de la Voilerie 🎅 !",
+    description: "",
+    image: "/Mercredi-26-Novembre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "11 Novembre 2025",
+    title: "𝐔𝐧𝐞 𝐣𝐨𝐮𝐫𝐧𝐞́𝐞 𝐚𝐯𝐞𝐜 𝐯𝐨𝐮𝐬 !",
+    description: "- Commémoration du 11 novembre, armistice de la Grande Guerre 🇫🇷 Hommage rendu aux poilus pour leur courage et leur sacrifice. -Repas au cercle des Cadeneaux, super ambiance !",
+    image: "/Mardi-11-Novembre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "2 Novembre 2025",
+    title: "𝐖𝐞𝐞𝐤-𝐞𝐧𝐝 𝐚𝐯𝐞𝐜 𝐯𝐨𝐮𝐬 !",
+    description: "- Halloween 🎃  - Bourse aux minéraux  Et pleins d'autres choses ! 😉",
+    image: "/Dimanche-2-Novembre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "24 Octobre 2025",
+    title: "À vos côtés !",
+    description: "- Fin de saison Réserve Communale Pennes Mirabeau 🟠 - Fête des sorcières🧹 - 3H des Barnouins 🏃‍➡️ - Salon du chocolat 🍫  - March rugby 🏉  A ce week-end !!!😉",
+    image: "/Vendredi-24-Octobre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "12 Octobre 2025",
+    title: "𝐔𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐞𝐧𝐬𝐨𝐥𝐞𝐢𝐥𝐥𝐞́ 𝐩𝐚𝐬𝐬𝐞́ 𝐚̀ 𝐯𝐨𝐬 𝐜𝐨̂𝐭𝐞́𝐬 ! ☀️",
+    description: "Entre sécurité routière, vide-greniers, marché, Octobre Rose, spectacles et rencontres sportives… Que de beaux moments partagés ! Déjà hâte d’être au prochain week-end 🤩",
+    image: "/Dimanche-12-Octobre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "5 Octobre 2025",
+    title: "𝐔𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐚̀ 𝐯𝐨𝐬 𝐜𝐨̂𝐭𝐞́𝐬 !",
+    description: "Méchoui du Cercle des Cadeneaux 🍖 Tournoi de pétanque aux Bouroumettes ⚫️ Marché de la Voilerie 🛍️ Autant de bons moments partagés ensemble — merci à toutes et à tous pour votre présence et votre bonne humeur ! 👍",
+    image: "/Dimanche-5-Octobre-2025.png",
+    type: 'image'
+
+  },
+  {
+    date: "28 Septembre 2025",
+    title: "𝐔𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐚𝐯𝐞𝐜 𝐯𝐨𝐮𝐬 !",
+    description: "Un week-end bien rempli avec vous ! 🎉 👏 Mondial du Tambourin : un grand bravo aux bénévoles et un énorme merci au Tambourin Club des Pennes-Mirabeau  pour leur accueil ! 🏉 Premier match à domicile pour le Rugby Club des Cadeneaux — quelle ambiance ! ⚫️ Tournoi de pétanque du Plan-des-Pennes ! 👟 Kinder Athletics : les minots ont passé une super journée grâce à l' Amicale des Pennes Mirabeau  Merci à toutes et à tous pour votre énergie et votre bonne humeur ! 💛💪",
+    image: "/Dimanche-28-Septembre-2025.png",
+    type: 'image'
+  },
+  {
+    date: "21 Septembre 2025",
     title: "𝐔𝐧 𝐰𝐞𝐞𝐤-𝐞𝐧𝐝 𝐞𝐧𝐬𝐨𝐥𝐞𝐢𝐥𝐥𝐞́ 𝐩𝐚𝐬𝐬𝐞́ 𝐚̀ 𝐯𝐨𝐬 𝐜𝐨̂𝐭𝐞́𝐬 ! ☀️",
     description: "Entre sécurité routière, vide-greniers, marché, Octobre Rose, spectacles et rencontres sportives… Que de beaux moments partagés ! Déjà hâte d’être au prochain week-end 🤩",
     video: "https://youtube.com/shorts/IBW2SZwXD1E?si=HSsgiL-qSQXklSYf",

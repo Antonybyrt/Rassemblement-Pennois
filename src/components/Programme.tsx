@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { programmeCards } from '@/data/ProgrammeVideosData';
 
 const Programme: React.FC = () => {
   // Fonction pour extraire l'ID YouTube de différentes URL formats (incluant les Shorts)
@@ -27,9 +28,6 @@ const Programme: React.FC = () => {
     return '';
   };
 
-  const videoUrl = "https://youtu.be/WilUn4j2SeM?si=4Y_hV1_t1gYmdHR6";
-  const videoId = getYouTubeVideoId(videoUrl);
-
   return (
     <motion.section
       id="programme"
@@ -41,12 +39,12 @@ const Programme: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-red-600 to-blue-600 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-red-700 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            🎬 Officialisation de notre candidature
+            Notre programme
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-gradient-to-r from-red-500 to-blue-500 mx-auto rounded-full"
@@ -60,56 +58,57 @@ const Programme: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Découvrez la présentation officielle de Maximilien pour les élections municipales des Pennes-Mirabeau
+            Découvrez les différents aspects de notre programme pour Les Pennes-Mirabeau
+          </motion.p>
+          <motion.p 
+            className="text-sm text-gray-500 max-w-2xl mx-auto mt-4 italic"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            La suite du programme sera annoncée prochainement
           </motion.p>
         </div>
         
-        {/* Vidéo YouTube intégrée directement */}
-        <motion.div
-          className="relative bg-white rounded-2xl shadow-2xl overflow-hidden"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          whileHover={{ scale: 1.02 }}
-        >
-          {/* Header de la vidéo */}
-          <div className="bg-gradient-to-r from-blue-600 to-red-700 px-6 py-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <span className="text-white font-semibold ml-4">🎬 Vidéo officielle de campagne</span>
-            </div>
-          </div>
-          
-          {/* Contenu de la vidéo */}
-          <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
-              width="100%"
-              height="100%"
-              style={{ border: 'none' }}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="rounded-b-2xl"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
-        </motion.div>
-
-        {/* Texte d'accompagnement */}
-        <motion.div
-          className="text-center mt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Cette vidéo marque le début officiel de notre campagne pour les élections municipales. 
-            Maximilien présente sa vision et ses engagements pour Les Pennes-Mirabeau.
-          </p>
-        </motion.div>
+        {/* Grille de cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          {programmeCards.map((card, index) => {
+            const videoId = getYouTubeVideoId(card.videoUrl);
+            
+            return (
+              <motion.div
+                key={index}
+                className="relative bg-white rounded-2xl shadow-2xl overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                {/* Header de la card */}
+                <div className="bg-gradient-to-r from-blue-600 to-red-700 px-6 py-4">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-white font-semibold ml-4">{card.title}</span>
+                  </div>
+                </div>
+                
+                {/* Contenu de la vidéo */}
+                <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 'none' }}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="rounded-b-2xl"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </motion.section>
   );

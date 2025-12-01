@@ -74,23 +74,15 @@ const AVosCotes: React.FC = () => {
   }, [currentIndex]);
 
   const cardVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
+    enter: {
       opacity: 0,
-      scale: 0.9,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1,
     },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 300 : -300,
+    center: {
+      opacity: 1,
+    },
+    exit: {
       opacity: 0,
-      scale: 0.9,
-    }),
+    },
   };
 
   const indicatorVariants = {
@@ -200,22 +192,25 @@ const AVosCotes: React.FC = () => {
           )}
 
           {/* Conteneur des cartes */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-16 overflow-hidden">
-            <AnimatePresence custom={direction}>
-              {visibleNews.map((item, index) => (
-                <motion.div 
-                  key={`${currentIndex}-${index}`}
-                  custom={direction}
-                  variants={cardVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 200, damping: 25 },
-                    opacity: { duration: 0.3 },
-                    scale: { duration: 0.4 }
-                  }}
-                  className="bg-gradient-to-br from-[#1976d2] to-[#003366] rounded-lg shadow-lg overflow-hidden cursor-pointer relative"
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-16 items-stretch">
+            {[0, 1, 2].map((slotIndex) => {
+              const item = visibleNews[slotIndex];
+              if (!item) return <div key={slotIndex} className="h-full" />;
+              
+              const realIndex = currentIndex * 3 + slotIndex;
+              return (
+                <div key={slotIndex} className="relative h-full">
+                  <AnimatePresence mode="wait">
+                    <motion.div 
+                      key={`news-${realIndex}-${currentIndex}`}
+                      variants={cardVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        opacity: { duration: 0.2 },
+                      }}
+                      className="bg-gradient-to-br from-[#1976d2] to-[#003366] rounded-lg shadow-lg overflow-hidden cursor-pointer relative h-full flex flex-col max-h-[500px]"
                   whileHover={{ 
                     scale: 1.02, 
                     y: -3, 
@@ -223,7 +218,7 @@ const AVosCotes: React.FC = () => {
                     transition: { duration: 0.4, ease: "easeOut" as const }
                   }}
                 >
-                  <div className="relative h-48 w-full overflow-hidden">
+                  <div className="relative h-56 w-full overflow-hidden flex-shrink-0">
                     {item.type === 'video' ? (
                       <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center group">
                         {/* Miniature YouTube */}
@@ -287,9 +282,9 @@ const AVosCotes: React.FC = () => {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4 flex flex-col flex-grow min-h-0">
                     <motion.div 
-                      className="text-sm text-blue-200 font-semibold mb-2"
+                      className="text-xs text-blue-200 font-semibold mb-1.5 flex-shrink-0"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1, duration: 0.3 }}
@@ -297,7 +292,7 @@ const AVosCotes: React.FC = () => {
                       {item.date}
                     </motion.div>
                     <motion.h3 
-                      className="text-xl font-semibold text-white mb-3"
+                      className="text-lg font-semibold text-white mb-2 flex-shrink-0 line-clamp-2"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.3 }}
@@ -305,17 +300,19 @@ const AVosCotes: React.FC = () => {
                       {item.title}
                     </motion.h3>
                     <motion.div 
-                      className="max-h-32 overflow-y-auto card-scrollbar"
+                      className="flex-grow overflow-y-auto card-scrollbar min-h-0"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.3 }}
                     >
-                      <p className="text-blue-100 pr-2 leading-relaxed">{item.description}</p>
+                      <p className="text-sm text-blue-100 pr-2 leading-relaxed">{item.description}</p>
                     </motion.div>
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
 
           {/* Indicateurs de page */}
