@@ -9,6 +9,22 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date: "1er Janvier 2026",
+    title: "Bonne Année 2026 !",
+    description: "Joyeux Nouvel An à tous !",
+    video: "https://www.youtube.com/shorts/jkuzRHPhd4E",
+    type: 'video'
+
+  },
+  {
+    date: "25 Décembre 2025",
+    title: "Joyeux Noël !",
+    description: "Joyeux Noël à tous !",
+    video: "https://www.youtube.com/shorts/vHMV6tE1mTE",
+    type: 'video'
+
+  },
+  {
     date: "26 Novembre 2025",
     title: "🎄Marché de Noël de la Voilerie 🎅 !",
     description: "",
