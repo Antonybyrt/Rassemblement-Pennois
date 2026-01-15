@@ -11,5 +11,9 @@ export const programmeCards: ProgrammeCard[] = [
   {
     title: "URBANISME, CE QUE NOUS PROPOSONS",
     videoUrl: "https://www.youtube.com/watch?v=u-JuqzoGN10"
+  },
+  {
+    title: "LA SÉCURITÉ, UN ENJEU MAJEUR POUR NOTRE COMMUNE",
+    videoUrl: "https://www.youtube.com/watch?v=CzVIIlFgpOY"
   }
 ];
