@@ -97,102 +97,50 @@ const AVosCotes: React.FC = () => {
   };
 
   return (
-    <motion.section
+    <section
       id="avoscotes"
-      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            À vos côtés
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-blue-200 to-blue-400 mx-auto rounded-full"
-            initial={{ width: 0 }}
-            animate={{ width: "6rem" }}
-            transition={{ duration: 1, delay: 0.3 }}
-          />
-          <motion.p 
-            className="text-xl text-gray-600 mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            Suivez l'actualité de notre campagne et nos dernières actions
-          </motion.p>
-        </div>
-        
-        <div className="relative">
-          {/* Flèche gauche */}
-          {totalPages > 1 && (
-            <motion.button
-              onClick={prevPage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white rounded-full p-4 shadow-lg transition-all duration-300 hover:shadow-xl backdrop-blur-sm"
-              whileHover={{ 
-                scale: 1.05, 
-                x: -1,
-                transition: { duration: 0.3, ease: "easeOut" as const }
-              }}
-              whileTap={{ scale: 0.98 }}
-              disabled={isAnimating}
-              aria-label="Précédent"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <motion.svg 
-                className="w-6 h-6 text-gray-700" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                whileHover={{ x: -1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </motion.svg>
-            </motion.button>
-          )}
+      {/* Décoration de fond */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-400 rounded-full blur-3xl"></div>
+      </div>
 
-          {/* Flèche droite */}
-          {totalPages > 1 && (
-            <motion.button
-              onClick={nextPage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white rounded-full p-4 shadow-lg transition-all duration-300 hover:shadow-xl backdrop-blur-sm"
-              whileHover={{ 
-                scale: 1.05, 
-                x: 1,
-                transition: { duration: 0.3, ease: "easeOut" as const }
-              }}
-              whileTap={{ scale: 0.98 }}
-              disabled={isAnimating}
-              aria-label="Suivant"
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <motion.svg 
-                className="w-6 h-6 text-gray-700" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                whileHover={{ x: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </motion.svg>
-            </motion.button>
-          )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* En-tête de section */}
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            className="inline-block mb-4"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-gray-100 text-blue-800 rounded-full text-sm font-semibold">
+              📰 Actualités
+            </span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-[#1976d2] to-gray-900 bg-clip-text text-transparent">
+            À vos côtés
+          </h2>
+          
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Suivez l'actualité de notre campagne et nos actions sur le terrain
+          </p>
+        </motion.div>
+
+        <div className="relative">
 
           {/* Conteneur des cartes */}
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-16 items-stretch">
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {[0, 1, 2].map((slotIndex) => {
               const item = visibleNews[slotIndex];
               if (!item) return <div key={slotIndex} className="h-full" />;
@@ -210,14 +158,37 @@ const AVosCotes: React.FC = () => {
                       transition={{
                         opacity: { duration: 0.2 },
                       }}
-                      className="bg-gradient-to-br from-[#1976d2] to-[#003366] rounded-lg shadow-lg overflow-hidden cursor-pointer relative h-full flex flex-col max-h-[500px]"
+                      className="group bg-gradient-to-br from-[#1976d2] to-[#003366] rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer relative h-full flex flex-col max-h-[500px] transition-all duration-300 border-2 border-transparent hover:border-blue-300"
                   whileHover={{ 
-                    scale: 1.02, 
-                    y: -3, 
-                    boxShadow: '0 12px 30px rgba(30, 64, 175, 0.2)',
-                    transition: { duration: 0.4, ease: "easeOut" as const }
+                    scale: 1.03, 
+                    y: -8, 
+                    transition: { duration: 0.3, ease: "easeOut" as const }
                   }}
                 >
+                  {/* Badge de type */}
+                  <div className="absolute top-4 right-4 z-20">
+                    {item.type === 'video' ? (
+                      <motion.div 
+                        className="bg-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <span>VIDÉO</span>
+                      </motion.div>
+                    ) : (
+                      <motion.div 
+                        className="bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>PHOTO</span>
+                      </motion.div>
+                    )}
+                  </div>
                   <div className="relative h-56 w-full overflow-hidden flex-shrink-0">
                     {item.type === 'video' ? (
                       <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center group">
@@ -253,11 +224,6 @@ const AVosCotes: React.FC = () => {
                             </svg>
                           </div>
                           
-                          {/* Badge VIDÉO */}
-                          <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold z-10">
-                            VIDÉO
-                          </div>
-                          
                           {/* Texte d'instruction */}
                           <div className="absolute bottom-2 left-2 right-2 text-center z-10">
                             <span className="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
@@ -282,32 +248,46 @@ const AVosCotes: React.FC = () => {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
-                  <div className="p-4 flex flex-col flex-grow min-h-0">
+                  <div className="p-5 flex flex-col flex-grow min-h-0 bg-gradient-to-b from-transparent to-black/10">
+                    {/* Date avec icône */}
                     <motion.div 
-                      className="text-xs text-blue-200 font-semibold mb-1.5 flex-shrink-0"
+                      className="flex items-center gap-2 text-xs text-blue-200 font-semibold mb-2 flex-shrink-0"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1, duration: 0.3 }}
                     >
-                      {item.date}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span>{item.date}</span>
                     </motion.div>
+
+                    {/* Titre */}
                     <motion.h3 
-                      className="text-lg font-semibold text-white mb-2 flex-shrink-0 line-clamp-2"
+                      className="text-lg font-bold text-white mb-3 flex-shrink-0 line-clamp-2 group-hover:text-blue-100 transition-colors"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.3 }}
                     >
                       {item.title}
                     </motion.h3>
+
+                    {/* Séparateur */}
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-blue-300 to-transparent mb-3 flex-shrink-0"></div>
+
+                    {/* Description avec scroll */}
                     <motion.div 
                       className="flex-grow overflow-y-auto card-scrollbar min-h-0"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.3 }}
                     >
-                      <p className="text-sm text-blue-100 pr-2 leading-relaxed">{item.description}</p>
+                      <p className="text-sm text-blue-50 pr-2 leading-relaxed">{item.description}</p>
                     </motion.div>
                   </div>
+
+                  {/* Effet de brillance au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-10 transform -skew-x-12 group-hover:translate-x-full transition-all duration-1000 pointer-events-none"></div>
                     </motion.div>
                   </AnimatePresence>
                 </div>
@@ -315,57 +295,73 @@ const AVosCotes: React.FC = () => {
             })}
           </div>
 
-          {/* Indicateurs de page */}
+          {/* Navigation et indicateurs en dessous */}
           {totalPages > 1 && (
             <motion.div 
-              className="flex justify-center mt-12 space-x-3"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              className="flex flex-col items-center mt-16 gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              {Array.from({ length: totalPages }, (_, i) => (
-                <motion.button
-                  key={i}
-                  onClick={() => goToPage(i)}
-                  className={`relative w-4 h-4 rounded-full transition-all duration-300 ${
-                    i === currentIndex 
-                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  variants={indicatorVariants}
-                  animate={i === currentIndex ? "active" : "inactive"}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  disabled={isAnimating}
-                  aria-label={`Page ${i + 1}`}
-                >
-                  {i === currentIndex && (
-                    <motion.div
-                      className="absolute inset-0 bg-white rounded-full"
-                      layoutId="activeIndicator"
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    />
-                  )}
-                </motion.button>
-              ))}
-            </motion.div>
-          )}
-
-          {/* Indicateur de progression */}
-          {totalPages > 1 && (
-            <motion.div 
-              className="flex justify-center mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-            >
-              <div className="bg-gray-200 rounded-full h-2 w-32 overflow-hidden">
+              {/* Barre de progression */}
+              <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-1.5 w-64 overflow-hidden shadow-inner">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                  className="h-full bg-gradient-to-r from-[#1976d2] via-blue-500 to-[#003366] rounded-full shadow-lg"
                   initial={{ width: 0 }}
                   animate={{ width: `${((currentIndex + 1) / totalPages) * 100}%` }}
-                  transition={{ duration: 0.6, ease: "easeOut" as const }}
+                  transition={{ duration: 0.5, ease: "easeOut" as const }}
                 />
+              </div>
+
+              {/* Boutons de navigation */}
+              <div className="flex items-center justify-center gap-4">
+                {/* Flèche gauche */}
+                <motion.button
+                  onClick={prevPage}
+                  className="group relative bg-gradient-to-br from-[#1976d2] to-[#003366] text-white rounded-full p-2.5 shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  disabled={isAnimating}
+                  aria-label="Précédent"
+                >
+                  <svg 
+                    className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </motion.button>
+
+                {/* Compteur de pages */}
+                <div className="flex items-center gap-3 bg-white rounded-full px-5 py-2 shadow-md">
+                  <span className="text-lg font-bold text-[#1976d2]">{currentIndex + 1}</span>
+                  <div className="w-8 h-0.5 bg-gradient-to-r from-[#1976d2] to-[#003366] rounded-full"></div>
+                  <span className="text-sm text-gray-400">{totalPages}</span>
+                </div>
+
+                {/* Flèche droite */}
+                <motion.button
+                  onClick={nextPage}
+                  className="group relative bg-gradient-to-br from-[#1976d2] to-[#003366] text-white rounded-full p-2.5 shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  disabled={isAnimating}
+                  aria-label="Suivant"
+                >
+                  <svg 
+                    className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </motion.button>
               </div>
             </motion.div>
           )}
@@ -430,7 +426,7 @@ const AVosCotes: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.section>
+    </section>
   );
 };
 

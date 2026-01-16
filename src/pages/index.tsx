@@ -26,10 +26,12 @@ export default function Home() {
         canonicalUrl="https://www.rassemblementpennois.com/"
       />
       <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-      <BackgroundImage />
-      <Hero />
-      <Programme />
-      <AVosCotes />
+      <div className="pt-20">
+        <BackgroundImage />
+        <Hero />
+        <Programme />
+        <AVosCotes />
+      </div>
       <Footer />
     </div>
   );
