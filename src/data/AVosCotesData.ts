@@ -9,6 +9,14 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date: "17 Janvier 2026",
+    title: "Réunion Publique",
+    description: "Venez assister à notre première réunion publique !",
+    video: "https://www.youtube.com/shorts/QwOOIFx3UuY",
+    type: 'video'
+
+  }
+  {
     date: "1er Janvier 2026",
     title: "Bonne Année 2026 !",
     description: "Joyeux Nouvel An à tous !",
