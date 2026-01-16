@@ -15,7 +15,7 @@ export const news: NewsItem[] = [
     video: "https://www.youtube.com/shorts/QwOOIFx3UuY",
     type: 'video'
 
-  }
+  },
   {
     date: "1er Janvier 2026",
     title: "Bonne Année 2026 !",
