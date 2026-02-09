@@ -9,6 +9,13 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date: "13 Février 2026",
+    title: "Réunion Publique",
+    description: "Venez assister à notre deuxième réunion publique à 19H au Chalet Frédéric Mistral, 245 chemin des Barnouins !",
+    video: "https://www.youtube.com/shorts/HqOs70YHPXc",
+    type: 'video'
+  },
+  {
     date: "23 Janvier 2026",
     "title": "Réunion Publique",
     "description": "Retour en images sur notre première réunion publique !",
